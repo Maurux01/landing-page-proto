@@ -50,6 +50,31 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 // Inicializar tema al cargar la página
 initTheme();
 
+// ===== MENU HAMBURGUESA =====
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+    });
+});
+
+// Cerrar menú al hacer clic fuera
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) {
+        navMenu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+    }
+});
+
 // ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -86,36 +111,78 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== FORM SUBMISSION =====
+// ===== FORM SUBMISSION CON VALIDACIÓN MEJORADA =====
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
         // Obtener valores del formulario
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        // Resetear estilos previos
+        [name, email, message].forEach(el => {
+            el.style.borderColor = '';
+            el.style.backgroundColor = '';
+        });
 
         // Validar campos
-        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-            alert('Por favor, completa todos los campos.');
+        let isValid = true;
+        if (name.value.trim() === '') {
+            name.style.borderColor = '#ff6b6b';
+            name.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+            isValid = false;
+        }
+        if (email.value.trim() === '') {
+            email.style.borderColor = '#ff6b6b';
+            email.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+            isValid = false;
+        }
+        if (message.value.trim() === '') {
+            message.style.borderColor = '#ff6b6b';
+            message.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+            isValid = false;
+        }
+
+        if (!isValid) {
+            showNotification('Por favor, completa todos los campos.', 'error');
             return;
         }
 
-        // Validar email
+        // Validar email mejorada
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Por favor, ingresa un email válido.');
+        if (!emailRegex.test(email.value)) {
+            email.style.borderColor = '#ff6b6b';
+            email.style.backgroundColor = 'rgba(255, 107, 107, 0.1)';
+            showNotification('Por favor, ingresa un email válido.', 'error');
             return;
         }
 
         // Mostrar mensaje de éxito
-        alert(`¡Gracias ${name}! Tu mensaje ha sido enviado. Te contactaremos pronto.`);
+        showNotification(`¡Gracias ${name.value}! Tu mensaje ha sido enviado. Te contactaremos pronto.`, 'success');
 
         // Limpiar formulario
         this.reset();
+        [name, email, message].forEach(el => {
+            el.style.borderColor = '';
+            el.style.backgroundColor = '';
+        });
     });
+}
+
+// Función para mostrar notificaciones mejoradas
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    const bgColor = type === 'success' ? '#4caf50' : '#ff6b6b';
+    notification.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);padding:15px 25px;background:' + bgColor + ';color:white;border-radius:8px;box-shadow:0 8px 25px rgba(0, 0, 0, 0.2);z-index:2000;font-weight:500;';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 4000);
 }
 
 // ===== ANIMACIÓN AL SCROLL (Intersection Observer) =====
@@ -144,8 +211,38 @@ window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
     if (hero) {
         const scrollPosition = window.pageYOffset;
-        hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        hero.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
     }
+});
+
+// ===== BOTON VOLVER ARRIBA =====
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ===== BOTONES VER DETALLES (Car Details) =====
+document.querySelectorAll('.car-details-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const carCard = this.closest('.car-card');
+        const carName = carCard.querySelector('h3').textContent;
+        const carPrice = carCard.querySelector('.car-price').textContent;
+        
+        showNotification(carName + ' - ' + carPrice + '. Contactanos para mas informacion!', 'success');
+    });
 });
 
 // ===== COUNTER ANIMATION (Opcional para agregar números) =====

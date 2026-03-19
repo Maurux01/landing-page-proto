@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoVentas - La mejor selección de autos nuevos y usados</title>
     <meta name="description" content="Descubre la mejor selección de autos nuevos y usados. Financia tu sueño con tasas competitivas y proceso rápido.">
+    <meta property="og:title" content="AutoVentas - La mejor selección de autos">
+    <meta property="og:description" content="Encuentra tu auto ideal con financiamiento flexible">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' dominant-baseline='middle' text-anchor='middle' font-size='80'%3E🏁%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +18,8 @@
         <nav>
             <div class="nav-left">
                 <div class="logo">🏁 AutoVentas</div>
-                <ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación" aria-expanded="false">☰</button>
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="#about">Sobre Nosotros</a></li>
                     <li><a href="#cars">Autos</a></li>
                     <li><a href="#testimonials">Testimonios</a></li>
@@ -61,21 +67,24 @@
         <h2>Autos Destacados</h2>
         <div class="car-grid">
             <div class="car-card">
-                <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Toyota Corolla">
+                <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Toyota Corolla" loading="lazy">
                 <h3>Toyota Corolla 2020</h3>
                 <p>Sedán compacto, excelente estado, bajo kilometraje, aire acondicionado, sistema de entretenimiento.</p>
                 <div class="car-price">$15,000 USD</div>
+                <button class="car-details-btn">Ver Detalles</button>
             </div>
-            <div class="car-card">
-                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Honda Civic">
+            <div class="car-card"> loading="lazy">
                 <h3>Honda Civic 2019</h3>
                 <p>Dinámico y eficiente, motor de alto rendimiento, especificaciones premium, llantas nuevas.</p>
                 <div class="car-price">$13,500 USD</div>
+                <button class="car-details-btn">Ver Detalles</buttonrendimiento, especificaciones premium, llantas nuevas.</p>
+                <div class="car-price">$13,500 USD</div>
             </div>
-            <div class="car-card">
-                <img src="https://www.mustangspecs.com/wp-content/uploads/2020/09/ford_mustang_2018_4k-HD-scaled.jpg" alt="Ford Mustang">
+            <div class="car-card"> loading="lazy">
                 <h3>Ford Mustang 2018</h3>
                 <p>Potencia y estilo icónico, motor V8 turbocargado, interiores deportivos, sistema audio premium.</p>
+                <div class="car-price">$28,000 USD</div>
+                <button class="car-details-btn">Ver Detalles</buttonturbocargado, interiores deportivos, sistema audio premium.</p>
                 <div class="car-price">$28,000 USD</div>
             </div>
         </div>
@@ -105,7 +114,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
+    <secBACK class="contact" id="contact">
         <h2>¡Contáctanos Hoy! 📞</h2>
         <form class="contact-form">
             <div class="form-group">
@@ -122,7 +131,10 @@
             </div>
             <button type="submit" class="btn">Enviar Mensaje</button>
         </form>
-    </section>
+    </secBACK TO TOP BUTTON -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Volver al inicio">↑</button>
+
+    <!-- tion>
 
     <!-- FOOTER -->
     <footer>

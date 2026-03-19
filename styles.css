@@ -163,6 +163,37 @@ nav ul li a:hover::after {
     transform: scale(1.1);
 }
 
+.theme-toggle:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+/* ===== MENU HAMBURGUESA ===== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #ff6b6b;
+}
+
+.menu-toggle:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
 /* ===== HERO ===== */
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -387,7 +418,7 @@ section h2::after {
 
 .car-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -434,7 +465,31 @@ section h2::after {
     font-size: 1.4rem;
     font-weight: 700;
     color: #ff6b6b;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.car-details-btn {
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.car-details-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+.car-details-btn:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
 }
 
 /* ===== TESTIMONIALS ===== */
@@ -563,6 +618,53 @@ html.dark-mode .contact {
     width: 100%;
 }
 
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
+.back-to-top:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ===== FOCUS STATES ACCESIBILIDAD ===== */
+a:focus, 
+button:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+.btn:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background-color: #0f1419;
@@ -588,7 +690,47 @@ footer p:first-child {
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav-menu {
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 35, 50, 0.95);
+        gap: 0;
+        transition: max-height 0.3s ease;
+        order: 3;
+    }
+
+    .nav-menu.active {
+        max-height: 500px;
+    }
+
+    .nav-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+    }
+
     .hero-content h1 {
         font-size: 2.2rem;
     }
@@ -599,30 +741,24 @@ footer p:first-child {
 
     nav {
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        justify-content: space-between;
     }
 
     .nav-left {
         order: 1;
         width: 100%;
-        justify-content: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .logo {
+        flex: 1;
+        text-align: left;
     }
 
     .theme-toggle {
         order: 2;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin-left: 0;
+        flex-shrink: 0;
     }
 
     section {
@@ -647,6 +783,14 @@ footer p:first-child {
 
     .testimonial-grid {
         grid-template-columns: 1fr;
+    }
+
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        bottom: 20px;
+        right: 20px;
     }
 }
 
