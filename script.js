@@ -10,7 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
+}); 
 
 // ===== ACTIVE NAVIGATION LINK =====
 window.addEventListener('scroll', () => {
