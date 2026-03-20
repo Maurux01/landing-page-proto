@@ -1,180 +1,180 @@
-# 🏁 AutoVentas - Landing Page
+# AutoVentas - Landing Page
 
-Una landing page moderna y responsiva para la venta de autos con un diseño elegante, animaciones suaves y funcionalidades completas.
+A modern and responsive landing page for car sales with elegant design, smooth animations, and complete functionality.
 
-## 🔗 Live Demo
+## Live Demo
 
-**Ver la página en vivo:** [https://maurux01.github.io/landing-page-proto/](https://maurux01.github.io/landing-page-proto/)
-
----
-
-## ✨ Características
-
-✅ **Diseño Moderno**: Interfaz atractiva con gradientes, animaciones suave y efectos visuales  
-✅ **100% Responsivo**: Optimizado para móviles, tablets y desktop  
-✅ **Rápido y Ligero**: Sin dependencias externas, código vanilla HTML/CSS/JS  
-✅ **Optimizado para SEO**: Meta tags, estructura semántica y accesibilidad  
-✅ **Formulario de Contacto**: Con validación y feedback de usuario  
-✅ **Animaciones Scroll**: Intersection Observer para animaciones elegantes  
-✅ **Navegación Suave**: Smooth scrolling y navegación intuitiva  
+**View the live page:** [https://maurux01.github.io/landing-page-proto/](https://maurux01.github.io/landing-page-proto/)
 
 ---
 
-## 📋 Secciones
+## Features
 
-- **Hero**: Banner principal con llamada a la acción
-- **Sobre Nosotros**: Características y ventajas del negocio
-- **Autos Destacados**: Galería de vehículos con descripción y precios
-- **Testimonios**: Opiniones de clientes satisfechos
-- **Contacto**: Formulario para consultas
-- **Footer**: Información de contacto y derechos
-
----
-
-## 🛠️ Tecnologías Usadas
-
-- **HTML5**: Estructura semántica y accesible
-- **CSS3**: Estilos modernos, animaciones y media queries
-- **JavaScript Vanilla**: Sin frameworks, solo JavaScript puro
-- **Google Fonts**: Tipografía premium (Poppins + Playfair Display)
+- **Modern Design**: Attractive interface with gradients, smooth animations, and visual effects
+- **100% Responsive**: Optimized for mobile, tablet, and desktop
+- **Fast and Lightweight**: No external dependencies, vanilla HTML/CSS/JS
+- **SEO Optimized**: Meta tags, semantic structure, and accessibility
+- **Contact Form**: With validation and user feedback
+- **Scroll Animations**: Intersection Observer for elegant animations
+- **Smooth Navigation**: Smooth scrolling and intuitive navigation
 
 ---
 
-## 📁 Estructura de Archivos
+## Sections
+
+- **Hero**: Main banner with call-to-action
+- **About Us**: Business features and benefits
+- **Featured Cars**: Vehicle gallery with descriptions and prices
+- **Testimonials**: Satisfied customer opinions
+- **Contact**: Inquiry form
+- **Footer**: Contact information and rights
+
+---
+
+## Technologies Used
+
+- **HTML5**: Semantic and accessible structure
+- **CSS3**: Modern styles, animations, and media queries
+- **Vanilla JavaScript**: No frameworks, pure JavaScript
+- **Google Fonts**: Premium typography (Poppins + Playfair Display)
+
+---
+
+## File Structure
 
 ```
-landing-page-proto-1/
-├── INDEX.html          # Archivo HTML principal
-├── styles.css          # Estilos CSS separados
-├── script.js           # JavaScript separado
-└── README.md           # Este archivo
+landing-page-proto/
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
+├── script.js           # JavaScript code
+└── README.md           # This file
 ```
 
 ---
 
-## 🚀 Cómo Usar
+## Getting Started
 
-1. **Clonar el repositorio:**
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/Maurux01/landing-page-proto.git
    cd landing-page-proto
    ```
 
-2. **Abrir la página:**
-   - Simplemente abre `INDEX.html` en tu navegador
-   - O usa un servidor local (recomendado):
+2. **Open the page:**
+   - Simply open `index.html` in your browser
+   - Or use a local server (recommended):
      ```bash
-     # Con Python 3
+     # With Python 3
      python -m http.server 8000
      
-     # Con Node.js (http-server)
+     # With Node.js (http-server)
      npx http-server
      ```
 
-3. **Ver en el navegador:**
-   - Ve a `http://localhost:8000`
+3. **View in browser:**
+   - Go to `http://localhost:8000`
 
 ---
 
-## 📝 Personalización
+## Customization
 
-### Cambiar Colores
-Edita las variables CSS en `styles.css`:
+### Change Colors
+Edit the CSS variables in `styles.css`:
 ```css
 :root {
     --primary-color: #c0392b;
     --secondary-color: #e74c3c;
-    /* ... más colores ... */
+    /* ... more colors ... */
 }
 ```
 
-### Agregar/Modificar Autos
-Edita la sección de autos en `INDEX.html`:
+### Add/Modify Cars
+Edit the cars section in `index.html`:
 ```html
 <div class="car-card">
-    <img src="tu-imagen.jpg" alt="Modelo Auto">
-    <h3>Modelo Auto Año</h3>
-    <p>Descripción del auto...</p>
-    <div class="car-price">$Precio USD</div>
+    <img src="your-image.jpg" alt="Car Model">
+    <h3>Car Model Year</h3>
+    <p>Car description...</p>
+    <div class="car-price">$Price USD</div>
 </div>
 ```
 
-### Configurar Formulario de Contacto
-El formulario valida datos pero no envía por defecto. Para integrar backend:
-- Modifica la función `contactForm.addEventListener` en `script.js`
-- Integra con servicios como Formspree, EmailJS o tu propio backend
+### Configure Contact Form
+The form validates data but doesn't send by default. To integrate backend:
+- Edit the `contactForm.addEventListener` function in `script.js`
+- Integrate with services like Formspree, EmailJS, or your own backend
 
 ---
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - **Desktop**: 1200px+
 - **Tablet**: 768px - 1199px
-- **Móvil**: 480px - 767px
-- **Móvil pequeño**: < 480px
+- **Mobile**: 480px - 767px
+- **Small Mobile**: < 480px
 
 ---
 
-## 🎨 Paleta de Colores
+## Color Palette
 
-| Color | Código | Uso |
-|-------|--------|-----|
-| Rojo Principal | `#c0392b` | Botones, acentos |
-| Rojo Secundario | `#e74c3c` | Gradientes, hover |
-| Azul | `#3498db` | Acentos |
-| Dorado | `#f39c12` | Testimonios, estrellas |
-| Oscuro | `#1a2332` | Fondo header |
-| Gris Claro | `#f8f9fa` | Fondos alternos |
-
----
-
-## ✅ Funcionalidades JavaScript
-
-- **Smooth Scrolling**: Navegación suave entre secciones
-- **Form Validation**: Validación de campos antes de envío
-- **Intersection Observer**: Animaciones al scroll
-- **Active Link Tracking**: Resalta el link activo en navegación
-- **Parallax Effect**: Efecto parallax en hero section
+| Color | Code | Usage |
+|-------|------|-------|
+| Primary Red | `#c0392b` | Buttons, accents |
+| Secondary Red | `#e74c3c` | Gradients, hover |
+| Blue | `#3498db` | Accents |
+| Gold | `#f39c12` | Testimonials, stars |
+| Dark | `#1a2332` | Header background |
+| Light Gray | `#f8f9fa` | Alternate backgrounds |
 
 ---
 
-## 🔒 SEO Optimization
+## JavaScript Features
 
-✅ Meta tags estructurados  
-✅ Títulos y descripciones  
-✅ Estructura HTML semántica  
-✅ Imágenes optimizadas con alt text  
-✅ Navegación clara con anclas  
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo licencia MIT. Puedes usarlo libremente en proyectos personales y comerciales.
+- **Smooth Scrolling**: Smooth navigation between sections
+- **Form Validation**: Field validation before submission
+- **Intersection Observer**: Animations on scroll
+- **Active Link Tracking**: Highlights active navigation link
+- **Parallax Effect**: Parallax effect in hero section
 
 ---
 
-## 👨‍💻 Autor
+## SEO Optimization
+
+- Structured meta tags
+- SEO-friendly titles and descriptions
+- Semantic HTML structure
+- Optimized images with alt text
+- Clear navigation with anchors
+
+---
+
+## License
+
+This project is under the MIT license. You can use it freely in personal and commercial projects.
+
+---
+
+## Author
 
 **Maurux01** - [GitHub](https://github.com/Maurux01)
 
 ---
 
-## 💡 Mejoras Futuras
+## Future Improvements
 
-- [ ] Integración con backend para formulario
-- [ ] Slider de autos destacados
-- [ ] Chat en vivo
-- [ ] Blog o noticias
-- [ ] Sistema de reservas
+- [ ] Backend integration for contact form
+- [ ] Featured cars slider
+- [ ] Live chat
+- [ ] Blog or news section
+- [ ] Booking system
 - [ ] Dark mode
 
 ---
 
-## 📞 Contacto
+## Support
 
-Para preguntas o sugerencias, abre un [Issue](https://github.com/Maurux01/landing-page-proto/issues) en el repositorio.
+For questions or suggestions, open an [Issue](https://github.com/Maurux01/landing-page-proto/issues) on the repository.
 
 ---
 
-**Última actualización:** Marzo 2024
+**Last updated:** March 2026
