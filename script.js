@@ -9,7 +9,6 @@ function initTheme() {
     
     let theme = 'light';
     
-    if (savedTheme) {
         theme = savedTheme;
     } else if (prefersDark) {
         theme = 'dark';

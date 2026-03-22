@@ -1,4 +1,4 @@
-# AutoVentas - Landing Page
+# AutoVentas - Landing Page 
 
 A modern and responsive landing page for car sales with elegant design, smooth animations, and complete functionality.
 
@@ -55,23 +55,24 @@ landing-page-proto/
 ## Getting Started
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/Maurux01/landing-page-proto.git
    cd landing-page-proto
    ```
-
 2. **Open the page:**
+
    - Simply open `index.html` in your browser
    - Or use a local server (recommended):
      ```bash
      # With Python 3
      python -m http.server 8000
-     
+
      # With Node.js (http-server)
      npx http-server
      ```
-
 3. **View in browser:**
+
    - Go to `http://localhost:8000`
 
 ---
@@ -79,7 +80,9 @@ landing-page-proto/
 ## Customization
 
 ### Change Colors
+
 Edit the CSS variables in `styles.css`:
+
 ```css
 :root {
     --primary-color: #c0392b;
@@ -89,7 +92,9 @@ Edit the CSS variables in `styles.css`:
 ```
 
 ### Add/Modify Cars
+
 Edit the cars section in `index.html`:
+
 ```html
 <div class="car-card">
     <img src="your-image.jpg" alt="Car Model">
@@ -100,7 +105,9 @@ Edit the cars section in `index.html`:
 ```
 
 ### Configure Contact Form
+
 The form validates data but doesn't send by default. To integrate backend:
+
 - Edit the `contactForm.addEventListener` function in `script.js`
 - Integrate with services like Formspree, EmailJS, or your own backend
 
@@ -117,14 +124,14 @@ The form validates data but doesn't send by default. To integrate backend:
 
 ## Color Palette
 
-| Color | Code | Usage |
-|-------|------|-------|
-| Primary Red | `#c0392b` | Buttons, accents |
-| Secondary Red | `#e74c3c` | Gradients, hover |
-| Blue | `#3498db` | Accents |
-| Gold | `#f39c12` | Testimonials, stars |
-| Dark | `#1a2332` | Header background |
-| Light Gray | `#f8f9fa` | Alternate backgrounds |
+| Color         | Code        | Usage                 |
+| ------------- | ----------- | --------------------- |
+| Primary Red   | `#c0392b` | Buttons, accents      |
+| Secondary Red | `#e74c3c` | Gradients, hover      |
+| Blue          | `#3498db` | Accents               |
+| Gold          | `#f39c12` | Testimonials, stars   |
+| Dark          | `#1a2332` | Header background     |
+| Light Gray    | `#f8f9fa` | Alternate backgrounds |
 
 ---
 
